@@ -27,9 +27,15 @@ if(isset($_POST["submit"])){
     $siklon = $_POST["siklon"];
     $saluran = $_POST["saluran"];
     $catrige = $_POST["catrige"];
-    $catatan = $_POST["catatan"];
+    $catatan = implode(",",$_POST["catatan"]);
+    $analisa = implode(",",$_POST["analisa"]);
+    $tindakan = implode(",",$_POST["tindakan"]);
+    $status = implode(",",$_POST["status"]);
+    $part = implode(",",$_POST["part"]);
+    $spec = implode(",",$_POST["spec"]);
+    $jmlh = implode(",",$_POST["jmlh"]);
    
-    $query = "INSERT INTO fpmsandblast VALUES ('$tanggal','$kode','$no_sandblast','$valve','$frl','$angin','$selang','$frl_mesin','$gauge',' $tombol','$tombol_emg','$tuas','$switch','$pedal','$kaca','$sarung_tangan','$selang_flux',' $selang_angin','$nozzle','$lampu','$body','$ruang_siklon','$siklon','$saluran','$catrige','$catatan')";
+    $query = "INSERT INTO fpmsandblast VALUES ('$tanggal','$kode','$no_sandblast','$valve','$frl','$angin','$selang','$frl_mesin','$gauge',' $tombol','$tombol_emg','$tuas','$switch','$pedal','$kaca','$sarung_tangan','$selang_flux',' $selang_angin','$nozzle','$lampu','$body','$ruang_siklon','$siklon','$saluran','$catrige','$catatan','$analisa','$tindakan','$status','$part','$part','$spec','$jmlh')";
     
     $sql = mysqli_query($conn,$query);
     if($sql){
