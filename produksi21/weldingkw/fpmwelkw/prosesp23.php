@@ -36,9 +36,15 @@ if(isset($_POST["submit"])){
     $heater = $_POST["heater"];
     $vregulator = $_POST["vregulator"];
     $tube = $_POST["tube"];
-    $catatan = $_POST["catatan"];
+    $catatan = implode(",",$_POST["catatan"]);
+    $analisa = implode(",",$_POST["analisa"]);
+    $tindakan = implode(",",$_POST["tindakan"]);
+    $status = implode(",",$_POST["status"]);
+    $part = implode(",",$_POST["part"]);
+    $spec = implode(",",$_POST["spec"]);
+    $jmlh = implode(",",$_POST["jmlh"]);
    
-    $query = "INSERT INTO fpmwelkw VALUES('$tanggal','$kode','$no_welkw','$silinder','$solenoid','$selang','$fit_speed',' $regulator','$angin','$volt','$ampere','$switch','$slctr_heater','$timer','$lampu',' $counter','$slctr_current','$baut','$screw','$pedal','$pegas','$var_condenser','$fix_condenser','$fswitch','$arc_supressor',$plate','$body','$traffo','$mcb','$relay','$main_switch','$heater','$vregulator','$tube','$catatan')";
+    $query = "INSERT INTO fpmwelkw VALUES('$tanggal','$kode','$no_welkw','$silinder','$solenoid','$selang','$fit_speed',' $regulator','$angin','$volt','$ampere','$switch','$slctr_heater','$timer','$lampu',' $counter','$slctr_current','$baut','$screw','$pedal','$pegas','$var_condenser','$fix_condenser','$fswitch','$arc_supressor',$plate','$body','$traffo','$mcb','$relay','$main_switch','$heater','$vregulator','$tube','$catatan','$analisa','$tindakan','$status','$part','$part','$spec','$jmlh')";
     
     $sql = mysqli_query($conn,$query);
     if($sql){
