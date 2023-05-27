@@ -21,7 +21,7 @@ if (isset($_SESSION['session_username'])) {
     }
 } else {
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
-    header("location: /engineer/login.php"); // Redirect ke halaman login jika belum login
+    header("location: /engineer/login.php"); // Redirect 
     exit();
 }
 $conn->close();
