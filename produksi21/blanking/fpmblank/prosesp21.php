@@ -23,9 +23,15 @@ if(isset($_POST["submit"])){
     $pelumasan = $_POST["pelumasan"];
     $penekan = $_POST["penekan"];
     $baut = $_POST["baut"];
-    $catatan = $_POST["catatan"];
+    $catatan = implode(",",$_POST["catatan"]);
+    $analisa = implode(",",$_POST["analisa"]);
+    $tindakan = implode(",",$_POST["tindakan"]);
+    $status = implode(",",$_POST["status"]);
+    $part = implode(",",$_POST["part"]);
+    $spec = implode(",",$_POST["spec"]);
+    $jmlh = implode(",",$_POST["jmlh"]);
    
-    $query = "INSERT INTO fpmblank VALUES('$tanggal','$kode','$no_blank','$switch','$slctr','$lampu','$timer','$lswitch','$silinder','$tanki','$oli','$solenoid','$pompa','$kontaktor','$relay','$kabel',' $body','$slider','$pelumasan','$penekan','$baut','$catatan')";
+    $query = "INSERT INTO fpmblank VALUES('$tanggal','$kode','$no_blank','$switch','$slctr','$lampu','$timer','$lswitch','$silinder','$tanki','$oli','$solenoid','$pompa','$kontaktor','$relay','$kabel',' $body','$slider','$pelumasan','$penekan','$baut','$catatan','$analisa','$tindakan','$status','$part','$part','$spec','$jmlh')";
     
     $sql = mysqli_query($conn,$query);
     if($sql){
