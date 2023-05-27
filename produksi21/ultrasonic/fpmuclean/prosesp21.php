@@ -33,9 +33,15 @@ if(isset($_POST["submit"])){
     $generator = $_POST["generator"];
     $traffo = $_POST["traffo"];
     $volt = $_POST["volt"];
-    $catatan = $_POST["catatan"];
+    $catatan = implode(",",$_POST["catatan"]);
+    $analisa = implode(",",$_POST["analisa"]);
+    $tindakan = implode(",",$_POST["tindakan"]);
+    $status = implode(",",$_POST["status"]);
+    $part = implode(",",$_POST["part"]);
+    $spec = implode(",",$_POST["spec"]);
+    $jmlh = implode(",",$_POST["jmlh"]);
    
-    $query = "INSERT INTO fpmuclean VALUES('$tanggal','$kode','$no_uclean','$silinder','$solenoid','$selang','$fit_speed',' $sensor','$frl','$angin','$panel','$tombol','$switch','$thermocontrol','$kabel','$hmi','$box','$baut','$motion','$pelumasan','$konektor','$body','$bak_wash','$bak_rins','$dryer','$thermocouple','$heater','$air_generator','$generator','$traffo','$volt','$catatan')";
+    $query = "INSERT INTO fpmuclean VALUES('$tanggal','$kode','$no_uclean','$silinder','$solenoid','$selang','$fit_speed',' $sensor','$frl','$angin','$panel','$tombol','$switch','$thermocontrol','$kabel','$hmi','$box','$baut','$motion','$pelumasan','$konektor','$body','$bak_wash','$bak_rins','$dryer','$thermocouple','$heater','$air_generator','$generator','$traffo','$volt','$catatan','$analisa','$tindakan','$status','$part','$part','$spec','$jmlh')";
     
     $sql = mysqli_query($conn,$query);
     if($sql){
