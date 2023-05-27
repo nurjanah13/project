@@ -19,9 +19,15 @@ if(isset($_POST["submit"])){
     $cbl_pwr_mtr = $_POST["cbl_pwr_mtr"];
     $cbl_pwr_utama = $_POST["cbl_pwr_utama"];
     $tombol = $_POST["tombol"];
-    $catatan = $_POST["catatan"];
+    $catatan = implode(",",$_POST["catatan"]);
+    $analisa = implode(",",$_POST["analisa"]);
+    $tindakan = implode(",",$_POST["tindakan"]);
+    $status = implode(",",$_POST["status"]);
+    $part = implode(",",$_POST["part"]);
+    $spec = implode(",",$_POST["spec"]);
+    $jmlh = implode(",",$_POST["jmlh"]);
    
-    $query = "INSERT INTO fpmsbrush VALUES('$tanggal','$kode','$no_sbrush','$kondisi','$ampere','$bearing_mtr','$temp','$vbelt','$pulley','$shaft','$matabrush','$bearing_me',' $body','$level','$cbl_pwr_mtr','$cbl_pwr_utama','$tombol','$catatan')";
+    $query = "INSERT INTO fpmsbrush VALUES('$tanggal','$kode','$no_sbrush','$kondisi','$ampere','$bearing_mtr','$temp','$vbelt','$pulley','$shaft','$matabrush','$bearing_me',' $body','$level','$cbl_pwr_mtr','$cbl_pwr_utama','$tombol','$catatan','$analisa','$tindakan','$status','$part','$part','$spec','$jmlh')";
     
     $sql = mysqli_query($conn,$query);
     if($sql){
