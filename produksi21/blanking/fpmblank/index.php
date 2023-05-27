@@ -21,7 +21,7 @@ if (isset($_SESSION['session_username'])) {
     }
 } else {
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
-    header("location: /engineer/login.php"); // Redirect 
+    header("location: /engineer/login.php"); // Redir
     exit();
 }
 $conn->close();
